@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUPOSU AI - Complete Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4A90E2;
+            margin-bottom: 10px;
+        }
+
+        .payment-details {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .pay-button {
+            background: #4A90E2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .pay-button:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+        }
+
+        .pay-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            background: #fdf2f2;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            margin: 10px 0;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="logo">KUPOSU AI Resume Maker</div>
+        
+        <div class="payment-details">
+            <div id="coinsAmount" class="amount">-</div>
+            <div class="description" id="description">Loading payment details...</div>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+        <div class="loading" id="loading">Processing...</div>
+
+        <button class="pay-button" id="payButton" disabled>
+            Complete Payment
+        </button>
+
+        <div class="footer">
+            Secure payment powered by Razorpay<br>
+            After payment completion, return to the extension
+        </div>
+    </div>
+
+    <script>
+        // Parse payment data from URL
+        function getPaymentData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dataParam = urlParams.get('data');
+            
+            if (!dataParam) {
+                return null;
+            }
+            
+            try {
+                return JSON.parse(decodeURIComponent(dataParam));
+            } catch (error) {
+                console.error('Error parsing payment data:', error);
+                return null;
+            }
+        }
+
+        // Initialize payment
+        function initializePayment() {
+            const paymentData = getPaymentData();
+            
+            if (!paymentData) {
+                showError('Invalid payment data. Please try again from the extension.');
+                return;
+            }
+
+            // Update UI with payment details
+            document.getElementById('coinsAmount').textContent = `${paymentData.amount} Coins`;
+            document.getElementById('description').textContent = paymentData.description;
+            
+            // Configure Razorpay options
+            const options = {
+                key: paymentData.order.key_id,
+                amount: paymentData.order.amount,
+                currency: paymentData.order.currency,
+                name: 'KUPOSU AI Resume Maker',
+                description: paymentData.description,
+                order_id: paymentData.order.id,
+                handler: function (response) {
+                    // Payment successful
+                    showSuccess('Payment successful! Coins will be credited to your account shortly.');
+                    setTimeout(() => {
+                        window.close();
+                    }, 3000);
+                },
+                prefill: {
+                    name: paymentData.user.name,
+                    email: paymentData.user.email,
+                    contact: paymentData.user.contact
+                },
+                notes: {
+                    coins: paymentData.amount.toString(),
+                    user_email: paymentData.user.email
+                },
+                theme: {
+                    color: '#4A90E2'
+                },
+                modal: {
+                    ondismiss: function () {
+                        showError('Payment was cancelled. You can retry or close this window.');
+                    }
+                }
+            };
+
+            // Enable pay button and set up click handler
+            const payButton = document.getElementById('payButton');
+            payButton.disabled = false;
+            payButton.onclick = function() {
+                if (typeof Razorpay === 'undefined') {
+                    showError('Payment system not loaded. Please refresh the page and try again.');
+                    return;
+                }
+                
+                const rzp = new Razorpay(options);
+                rzp.open();
+            };
+        }
+
+        function showError(message) {
+            const errorElement = document.getElementById('errorMessage');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function showSuccess(message) {
+            const payButton = document.getElementById('payButton');
+            payButton.textContent = '✅ Payment Successful';
+            payButton.style.background = '#27ae60';
+            payButton.disabled = true;
+            
+            const description = document.getElementById('description');
+            description.textContent = message;
+            description.style.color = '#27ae60';
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', initializePayment);
+    </script>
+</body>
+</html>
