@@ -237,6 +237,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     console.log('🤖 KUPOSU AI Website loaded successfully!');
-    console.log('📧 Contact: support@kuposu.com');
+    console.log('📧 Contact: hello@kuposu.co');
     console.log('📱 Phone: +91 8866666476');
 });
