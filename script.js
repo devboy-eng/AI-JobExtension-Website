@@ -119,15 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     }
 
-    // Chrome Extension download simulation
-    const extensionLinks = document.querySelectorAll('a[href*="chrome"]');
-    extensionLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('KUPOSU AI Chrome Extension\n\nComing soon to Chrome Web Store!\n\nFor early access, please contact our support team.');
-        });
-    });
-
     // Mobile menu toggle (for future mobile implementation)
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
