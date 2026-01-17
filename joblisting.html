@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Job Listings - Browse Jobs & Create AI-Optimized Resumes | KUPOSU AI</title>
+    <meta name="title" content="Job Listings - Browse Jobs & Create AI-Optimized Resumes | KUPOSU AI">
+    <meta name="description" content="Browse latest job listings from top companies like Google, Microsoft, Amazon & more. Customize your resume with AI for each job posting. Get 3x higher shortlisting rate with KUPOSU AI.">
+    <meta name="keywords" content="job listings, job search, software engineer jobs, IT jobs, tech jobs, remote jobs, work from home jobs, resume builder, AI resume maker, ATS friendly resume, ATS optimized resume, ATS resume builder, applicant tracking system, beat ATS, pass ATS, LinkedIn jobs, career opportunities, fresher jobs, experienced jobs, jobs worldwide, international jobs, USA jobs, UK jobs, Canada jobs, Australia jobs, Europe jobs, UAE jobs, Dubai jobs, Gulf jobs, Middle East jobs, Singapore jobs, Germany jobs, job openings, hiring now, job vacancies, employment opportunities">
+    <meta name="author" content="KUPOSU AI">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jobextension.kuposu.co/joblisting.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jobextension.kuposu.co/joblisting.html">
+    <meta property="og:title" content="Job Listings - Browse Jobs & Create AI-Optimized Resumes | KUPOSU AI">
+    <meta property="og:description" content="Browse latest job listings from top companies. Customize your resume with AI for each job posting. Get 3x higher shortlisting rate.">
+    <meta property="og:image" content="https://jobextension.kuposu.co/og-image.png">
+    <meta property="og:site_name" content="KUPOSU AI">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://jobextension.kuposu.co/joblisting.html">
+    <meta name="twitter:title" content="Job Listings - Browse Jobs & Create AI-Optimized Resumes | KUPOSU AI">
+    <meta name="twitter:description" content="Browse latest job listings from top companies. Customize your resume with AI for each job posting. Get 3x higher shortlisting rate.">
+    <meta name="twitter:image" content="https://jobextension.kuposu.co/og-image.png">
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Job Listings - KUPOSU AI",
+        "description": "Browse latest job listings from top companies and create AI-optimized resumes for each job posting.",
+        "url": "https://jobextension.kuposu.co/joblisting.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "KUPOSU AI",
+            "url": "https://jobextension.kuposu.co",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://jobextension.kuposu.co/logo.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Job Listings",
+            "description": "Latest job openings from top companies in India",
+            "numberOfItems": "42",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Software Engineer Jobs"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Product Manager Jobs"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Data Scientist Jobs"
+                }
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://jobextension.kuposu.co"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Job Listings",
+                    "item": "https://jobextension.kuposu.co/joblisting.html"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <h2>KUPOSU AI</h2>
+                </a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="joblisting.html" class="active">Job Listings</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact" class="btn-cta">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Job Listings Header -->
+    <section class="joblisting-hero">
+        <div class="container">
+            <h1>Job Listings</h1>
+            <p class="joblisting-subtitle">Browse jobs where users have customized their resumes with KUPOSU AI</p>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by company, role, or keyword...">
+                    <button id="searchBtn" class="btn-primary">Search</button>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-info">
+                <span id="resultsCount">Showing 20 of 156 jobs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings Grid -->
+    <section class="joblisting-section">
+        <div class="container">
+            <div class="jobs-grid" id="jobsGrid">
+                <!-- Jobs will be rendered here by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>KUPOSU AI</h3>
+                    <p>Empowering job seekers with AI-powered resume optimization for better career opportunities.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#pricing">Pricing</a>
+                        <a href="index.html#how-to-use">How It Works</a>
+                        <a href="joblisting.html">Job Listings</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="index.html#contact">Contact Us</a>
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="https://chromewebstore.google.com/detail/kuposu-ai-resume-maker/eofpmapkmfcmmbeppodpgeelpefjpeeb?utm_source=item-share-cb" target="_blank">Chrome Web Store</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KUPOSU AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Install Extension Notification Popup -->
+    <div class="notification-overlay" id="notificationPopup">
+        <div class="notification-container">
+            <div class="notification-icon">
+                <i class="fas fa-magic"></i>
+            </div>
+            <h3>Customize Your Resume with AI</h3>
+            <p class="notification-job-info" id="notificationJobInfo">
+                For <strong id="notifRole">Senior Software Engineer</strong> at <strong id="notifCompany">Google</strong>
+            </p>
+            <p class="notification-message">
+                Install the KUPOSU AI Chrome Extension to generate an ATS-optimized resume tailored to this job in seconds.
+            </p>
+            <div class="notification-features">
+                <div class="notif-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>AI-Powered Optimization</span>
+                </div>
+                <div class="notif-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>ATS-Friendly Format</span>
+                </div>
+                <div class="notif-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Instant Download</span>
+                </div>
+            </div>
+            <div class="notification-buttons">
+                <button class="btn-secondary" onclick="closeNotification()">Maybe Later</button>
+                <a href="https://chromewebstore.google.com/detail/kuposu-ai-resume-maker/eofpmapkmfcmmbeppodpgeelpefjpeeb" target="_blank" class="btn-primary" onclick="closeNotification()">
+                    <i class="fab fa-chrome"></i> Install Extension
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div class="modal-overlay" id="jobModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-company-info">
+                    <div class="modal-company-logo" id="modalLogo">G</div>
+                    <div>
+                        <h2 id="modalRole">Senior Software Engineer</h2>
+                        <p class="modal-company-name" id="modalCompany">Google</p>
+                    </div>
+                </div>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> <span id="modalLocation">Bangalore, India</span></span>
+                    <span><i class="fas fa-briefcase"></i> <span id="modalType">Full-time</span></span>
+                    <span><i class="fas fa-calendar-alt"></i> Posted <span id="modalDate">2 days ago</span></span>
+                </div>
+                <div class="modal-section">
+                    <h3>Job Description</h3>
+                    <p id="modalDescription">Job description will appear here...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal()">Close</button>
+                <button class="btn-primary" onclick="applyWithKuposu()">
+                    <i class="fas fa-magic"></i> Customize Resume with AI
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="joblisting.js"></script>
+</body>
+</html>
