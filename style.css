@@ -873,6 +873,7 @@ body {
 
 .primary-card .works-icon {
     background: rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
 .primary-card .works-content h5 {
@@ -881,6 +882,10 @@ body {
 
 .primary-card .works-content p {
     color: rgba(255, 255, 255, 0.9);
+}
+
+.primary-card .works-content strong {
+    color: white;
 }
 
 .works-icon {
