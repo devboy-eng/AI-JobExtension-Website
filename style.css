@@ -41,6 +41,18 @@ body {
     align-items: center;
 }
 
+.nav-brand a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.nav-logo {
+    height: 28px;
+    width: auto;
+}
+
 .nav-brand h2 {
     color: #2563eb;
     font-weight: 700;
@@ -1056,9 +1068,21 @@ body {
     margin-bottom: 2rem;
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+    height: 28px;
+    width: auto;
+}
+
 .footer-brand h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     color: #3b82f6;
 }
 
