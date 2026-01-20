@@ -582,38 +582,45 @@ body {
 
 .demo-video {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 4rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 24px;
 }
 
-.video-placeholder {
-    background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
-    border-radius: 16px;
-    padding: 4rem 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px dashed #cbd5e1;
-}
-
-.video-placeholder:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.video-placeholder i {
-    font-size: 4rem;
-    color: #2563eb;
-    margin-bottom: 1rem;
-}
-
-.video-placeholder p {
-    font-size: 1.25rem;
-    font-weight: 600;
+.demo-title {
+    font-size: 2rem;
+    font-weight: 700;
     color: #1e293b;
     margin-bottom: 0.5rem;
 }
 
-.video-placeholder span {
+.demo-subtitle {
     color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-bottom: 54%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border: 4px solid white;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
 }
 
 /* Features Section */
