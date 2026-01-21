@@ -276,5 +276,65 @@
     </div>
 
     <script src="joblisting.js"></script>
+
+    <!-- WebSocket for Real-time Job Updates -->
+    <script type="module">
+        import { createConsumer } from 'https://cdn.jsdelivr.net/npm/@rails/actioncable@7.1.3/dist/action_cable.esm.js';
+
+        // Connect to WebSocket server
+        const cable = createConsumer('wss://ai-jobextension-backend.onrender.com/cable');
+
+        // Subscribe to job listings channel
+        const jobListingsChannel = cable.subscriptions.create('JobListingsChannel', {
+            connected() {
+                console.log('Connected to JobListingsChannel');
+            },
+
+            disconnected() {
+                console.log('Disconnected from JobListingsChannel');
+            },
+
+            received(data) {
+                console.log('Received job listing:', data);
+
+                if (data.type === 'new_job') {
+                    addNewJobToList(data.data);
+                }
+            }
+        });
+
+        // Function to add new job to the list
+        function addNewJobToList(jobData) {
+            const newJob = {
+                id: Date.now(),
+                company: jobData.company || 'Unknown Company',
+                role: jobData.job_title || 'Unknown Role',
+                location: 'Remote',
+                type: 'Full-time',
+                description: jobData.job_description || 'No description available',
+                postedDate: jobData.timestamp ? jobData.timestamp.split('T')[0] : new Date().toISOString().split('T')[0],
+                platform: jobData.platform || 'Unknown',
+                isNew: true
+            };
+
+            // Add to beginning of jobs array (defined in joblisting.js)
+            if (typeof jobs !== 'undefined') {
+                jobs.unshift(newJob);
+                filteredJobs = [...jobs];
+                renderJobs();
+
+                // Highlight the new job card
+                setTimeout(() => {
+                    const firstCard = document.querySelector('.job-card');
+                    if (firstCard) {
+                        firstCard.classList.add('new-job-highlight');
+                        setTimeout(() => {
+                            firstCard.classList.remove('new-job-highlight');
+                        }, 3000);
+                    }
+                }, 100);
+            }
+        }
+    </script>
 </body>
 </html>

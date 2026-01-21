@@ -1395,6 +1395,27 @@ body {
     border-color: #2563eb;
 }
 
+/* New job highlight animation */
+.job-card.new-job-highlight {
+    animation: newJobPulse 0.5s ease-out;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border-color: #10b981;
+}
+
+@keyframes newJobPulse {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    50% {
+        transform: translateY(5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 .job-card-header {
     display: flex;
     align-items: flex-start;
