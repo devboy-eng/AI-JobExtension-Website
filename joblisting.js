@@ -3,11 +3,11 @@
 
 // Configuration
 const JOBS_PER_PAGE = 20;
-let currentPage = 1;
-let filteredJobs = [];
+var currentPage = 1;
+var filteredJobs = [];
 
-// Mock Data - Replace this with API call when backend is ready
-const jobs = [
+// Job data - accessible globally for WebSocket updates
+var jobs = [
     {
         id: 1,
         company: "Google",
@@ -697,3 +697,9 @@ function escapeHtml(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+
+// Expose functions globally for WebSocket module
+window.jobs = jobs;
+window.filteredJobs = filteredJobs;
+window.renderJobs = renderJobs;
+window.currentPage = currentPage;
