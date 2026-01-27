@@ -123,7 +123,7 @@
         }
 
         .blog-container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -232,38 +232,26 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .table-of-contents {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .table-of-contents h4 {
-            font-size: 1rem;
-            color: #1e293b;
-            margin-bottom: 1rem;
-        }
-
-        .table-of-contents ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .table-of-contents li {
-            margin-bottom: 0.5rem;
-        }
-
-        .table-of-contents a {
-            color: #2563eb;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
-        .table-of-contents a:hover {
-            text-decoration: underline;
-        }
+        .blog-content .container { max-width: 1100px; }
+        .blog-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; align-items: start; }
+        .blog-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 5rem; }
+        .sidebar-toc { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-toc h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-toc ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar-toc li { margin-bottom: 0.5rem; }
+        .sidebar-toc a { color: #64748b; text-decoration: none; font-size: 0.85rem; line-height: 1.4; display: block; padding: 0.25rem 0; transition: color 0.2s; }
+        .sidebar-toc a:hover { color: #2563eb; }
+        .sidebar-cta { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 12px; padding: 1.5rem; color: white; text-align: center; margin-bottom: 1.5rem; }
+        .sidebar-cta h4 { color: white; margin: 0 0 0.5rem; font-size: 1rem; }
+        .sidebar-cta p { color: rgba(255,255,255,0.9); font-size: 0.85rem; margin: 0 0 1rem; }
+        .sidebar-cta .cta-btn { background: white; color: #2563eb; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .sidebar-related { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-related h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-related a { display: block; color: #475569; text-decoration: none; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; transition: color 0.2s; }
+        .sidebar-related a:last-child { border-bottom: none; }
+        .sidebar-related a:hover { color: #2563eb; }
+        @media (max-width: 968px) { .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { display: none; } }
 
         @media (max-width: 768px) {
             .blog-hero h1 {
@@ -317,17 +305,8 @@
     <!-- Blog Content -->
     <section class="blog-content">
         <div class="blog-container">
-
-            <div class="table-of-contents">
-                <h4>Table of Contents</h4>
-                <ul>
-                    <li><a href="#what-is-ats">What is an ATS (Applicant Tracking System)?</a></li>
-                    <li><a href="#how-ats-works">How Does ATS Work?</a></li>
-                    <li><a href="#why-ats-matters">Why ATS Matters for Job Seekers</a></li>
-                    <li><a href="#ats-resume-tips">10 Tips to Make Your Resume ATS-Friendly</a></li>
-                    <li><a href="#common-mistakes">Common ATS Mistakes to Avoid</a></li>
-                </ul>
-            </div>
+            <div class="blog-layout">
+                <div class="blog-main">
 
             <p>If you've been applying to jobs online and not hearing back, your resume might be getting rejected before a human even sees it. The culprit? <strong>Applicant Tracking Systems (ATS)</strong>. In this comprehensive guide, we'll explain what ATS is, how it works, and most importantly, how to optimize your resume to beat these digital gatekeepers.</p>
 
@@ -441,6 +420,36 @@
                 </a>
             </div>
 
+                </div>
+
+                <aside class="blog-sidebar">
+                    <div class="sidebar-sticky">
+                        <div class="sidebar-toc">
+                            <h4>Table of Contents</h4>
+                            <ul>
+                                <li><a href="#what-is-ats">What is an ATS (Applicant Tracking System)?</a></li>
+                                <li><a href="#how-ats-works">How Does ATS Work?</a></li>
+                                <li><a href="#why-ats-matters">Why ATS Matters for Job Seekers</a></li>
+                                <li><a href="#ats-resume-tips">10 Tips to Make Your Resume ATS-Friendly</a></li>
+                                <li><a href="#common-mistakes">Common ATS Mistakes to Avoid</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-cta">
+                            <h4>Optimize Your Resume</h4>
+                            <p>Get an ATS-friendly resume tailored to any job in seconds.</p>
+                            <a href="https://chromewebstore.google.com/detail/kuposu-ai-resume-maker/eofpmapkmfcmmbeppodpgeelpefjpeeb" target="_blank" class="cta-btn"><i class="fab fa-chrome"></i> Try KUPOSU AI Free</a>
+                        </div>
+
+                        <div class="sidebar-related">
+                            <h4>Related Articles</h4>
+                            <a href="ats-extension.html">How to Use KUPOSU AI Extension</a>
+                            <a href="job-specific-ats-resume.html">Job Specific ATS Resume Guide</a>
+                            <a href="free-ats-resume-checker-chrome-extension.html">Free ATS Checker Extensions</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
     </section>
 

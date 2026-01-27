@@ -125,7 +125,7 @@
         .blog-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 0.95rem; opacity: 0.9; }
         .blog-meta span { display: flex; align-items: center; gap: 0.5rem; }
         .blog-content { padding: 4rem 0; background: #f8fafc; }
-        .blog-content .container { max-width: 800px; }
+        .blog-content .container { max-width: 1100px; }
         .blog-article { background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
         .blog-article h2 { font-size: 1.75rem; color: #1e293b; margin: 2.5rem 0 1rem; padding-top: 1rem; }
         .blog-article h3 { font-size: 1.35rem; color: #334155; margin: 2rem 0 0.75rem; }
@@ -159,7 +159,25 @@
         .related-card:hover { border-color: #0077b5; transform: translateY(-2px); }
         .related-card h4 { color: #1e293b; margin: 0 0 0.5rem; font-size: 1rem; }
         .related-card p { color: #64748b; margin: 0; font-size: 0.9rem; }
-        @media (max-width: 768px) { .blog-hero h1 { font-size: 1.75rem; } .blog-article { padding: 1.5rem; } .blog-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; } }
+        .blog-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; align-items: start; }
+        .blog-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 5rem; }
+        .sidebar-toc { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-toc h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-toc ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar-toc li { margin-bottom: 0.5rem; }
+        .sidebar-toc a { color: #64748b; text-decoration: none; font-size: 0.85rem; line-height: 1.4; display: block; padding: 0.25rem 0; transition: color 0.2s; }
+        .sidebar-toc a:hover { color: #2563eb; }
+        .sidebar-cta { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 12px; padding: 1.5rem; color: white; text-align: center; margin-bottom: 1.5rem; }
+        .sidebar-cta h4 { color: white; margin: 0 0 0.5rem; font-size: 1rem; }
+        .sidebar-cta p { color: rgba(255,255,255,0.9); font-size: 0.85rem; margin: 0 0 1rem; }
+        .sidebar-cta .cta-btn { background: white; color: #2563eb; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .sidebar-related { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-related h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-related a { display: block; color: #475569; text-decoration: none; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; transition: color 0.2s; }
+        .sidebar-related a:last-child { border-bottom: none; }
+        .sidebar-related a:hover { color: #2563eb; }
+        @media (max-width: 768px) { .blog-hero h1 { font-size: 1.75rem; } .blog-article { padding: 1.5rem; } .blog-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; } .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { display: none; } }
     </style>
 </head>
 <body>
@@ -197,6 +215,7 @@
     <!-- Blog Content -->
     <section class="blog-content">
         <div class="container">
+            <div class="blog-layout">
             <article class="blog-article">
                 <p>LinkedIn is the #1 platform for job seekers, with over 50 million companies posting jobs. But here's the problem: everyone uses the same generic resume. In this guide, you'll learn how to <strong>customize your resume for LinkedIn jobs instantly</strong> and stand out from the crowd.</p>
 
@@ -204,7 +223,7 @@
                     <p><strong>LinkedIn Stat:</strong> 6 people are hired every minute on LinkedIn. But for every job posting, there are 250+ applicants. A tailored resume is your best chance to stand out.</p>
                 </div>
 
-                <h2>Why Customize Your Resume for LinkedIn Jobs?</h2>
+                <h2 id="why-customize">Why Customize Your Resume for LinkedIn Jobs?</h2>
                 <p>Even on LinkedIn, most companies use ATS (Applicant Tracking Systems) to filter resumes. Here's why customization matters:</p>
 
                 <ul>
@@ -214,7 +233,7 @@
                     <li><strong>Higher Response Rate:</strong> 3x more likely to get callbacks</li>
                 </ul>
 
-                <h2>The Problem with LinkedIn Easy Apply</h2>
+                <h2 id="easy-apply-problem">The Problem with LinkedIn Easy Apply</h2>
                 <p>LinkedIn Easy Apply makes applying convenient—but it's a double-edged sword:</p>
 
                 <ul>
@@ -228,7 +247,7 @@
                     <p><strong>The Solution:</strong> Use AI tools to instantly customize your resume for each LinkedIn job before hitting "Easy Apply."</p>
                 </div>
 
-                <h2>How to Customize Resume for LinkedIn Jobs in One Click</h2>
+                <h2 id="how-to">How to Customize Resume for LinkedIn Jobs in One Click</h2>
                 <p>With KUPOSU AI Chrome extension, you can generate tailored resumes while browsing LinkedIn:</p>
 
                 <ol class="steps-list">
@@ -249,7 +268,7 @@
                     </a>
                 </div>
 
-                <h2>What Gets Customized for LinkedIn Jobs</h2>
+                <h2 id="what-customized">What Gets Customized for LinkedIn Jobs</h2>
                 <p>When you use KUPOSU AI on a LinkedIn job, the AI automatically:</p>
 
                 <ul>
@@ -261,7 +280,7 @@
                     <li><strong>Formats for ATS:</strong> Ensures compatibility with LinkedIn's ATS</li>
                 </ul>
 
-                <h2>LinkedIn Easy Apply vs External Apply</h2>
+                <h2 id="comparison">LinkedIn Easy Apply vs External Apply</h2>
                 <table class="comparison-table">
                     <tr>
                         <th>Factor</th>
@@ -297,7 +316,7 @@
 
                 <p><strong>Tip:</strong> Always upload a tailored resume even for Easy Apply—don't rely solely on your LinkedIn profile.</p>
 
-                <h2>Tips for LinkedIn Job Applications</h2>
+                <h2 id="tips">Tips for LinkedIn Job Applications</h2>
 
                 <h3>1. Update Your LinkedIn Profile</h3>
                 <p>Many recruiters check your profile even after receiving your resume. Make sure it's complete and matches your resume.</p>
@@ -314,7 +333,7 @@
                 <h3>5. Connect with the Hiring Manager</h3>
                 <p>Send a connection request with a personalized note after applying.</p>
 
-                <h2>Common LinkedIn Resume Mistakes</h2>
+                <h2 id="mistakes">Common LinkedIn Resume Mistakes</h2>
                 <ul>
                     <li><strong>Using Only LinkedIn Profile:</strong> Always upload a tailored PDF resume</li>
                     <li><strong>Generic Headline:</strong> "Open to Work" is too vague—be specific</li>
@@ -323,7 +342,7 @@
                     <li><strong>No Follow-Up:</strong> Connect with recruiters after applying</li>
                 </ul>
 
-                <h2>Frequently Asked Questions</h2>
+                <h2 id="faq">Frequently Asked Questions</h2>
                 <div class="faq-section">
                     <div class="faq-item">
                         <h3><i class="fas fa-question-circle"></i> Should I customize my resume for each LinkedIn job?</h3>
@@ -354,6 +373,37 @@
                     </div>
                 </div>
             </article>
+            <aside class="blog-sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-toc">
+                        <h4>Table of Contents</h4>
+                        <ul>
+                            <li><a href="#why-customize">Why Customize Your Resume</a></li>
+                            <li><a href="#easy-apply-problem">Problem with Easy Apply</a></li>
+                            <li><a href="#how-to">One-Click Customization</a></li>
+                            <li><a href="#what-customized">What Gets Customized</a></li>
+                            <li><a href="#comparison">Easy Apply vs External</a></li>
+                            <li><a href="#tips">Application Tips</a></li>
+                            <li><a href="#mistakes">Common Mistakes</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-cta">
+                        <h4>Customize Resumes Instantly</h4>
+                        <p>AI-powered resume tailoring for LinkedIn jobs</p>
+                        <a href="https://chromewebstore.google.com/detail/kuposu-ai-resume-maker/eofpmapkmfcmmbeppodpgeelpefjpeeb" target="_blank" class="cta-btn">
+                            <i class="fab fa-chrome"></i> Install Free
+                        </a>
+                    </div>
+                    <div class="sidebar-related">
+                        <h4>Related Articles</h4>
+                        <a href="tailor-resume-to-job-description.html">Tailor Resume to Job Description</a>
+                        <a href="best-chrome-extensions-job-seekers.html">Best Chrome Extensions for Job Seekers</a>
+                        <a href="job-specific-ats-resume.html">Job Specific ATS Resume Guide</a>
+                    </div>
+                </div>
+            </aside>
+            </div>
         </div>
     </section>
 

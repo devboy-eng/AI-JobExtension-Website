@@ -128,7 +128,7 @@
         .blog-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 0.95rem; opacity: 0.9; }
         .blog-meta span { display: flex; align-items: center; gap: 0.5rem; }
         .blog-content { padding: 4rem 0; background: #f8fafc; }
-        .blog-content .container { max-width: 800px; }
+        .blog-content .container { max-width: 1100px; }
         .blog-article { background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
         .blog-article h2 { font-size: 1.75rem; color: #1e293b; margin: 2.5rem 0 1rem; padding-top: 1rem; }
         .blog-article h3 { font-size: 1.35rem; color: #334155; margin: 2rem 0 0.75rem; }
@@ -156,7 +156,25 @@
         .related-card:hover { border-color: #2563eb; transform: translateY(-2px); }
         .related-card h4 { color: #1e293b; margin: 0 0 0.5rem; font-size: 1rem; }
         .related-card p { color: #64748b; margin: 0; font-size: 0.9rem; }
-        @media (max-width: 768px) { .blog-hero h1 { font-size: 1.75rem; } .blog-article { padding: 1.5rem; } .blog-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; } }
+        .blog-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; align-items: start; }
+        .blog-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 5rem; }
+        .sidebar-toc { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-toc h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-toc ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar-toc li { margin-bottom: 0.5rem; }
+        .sidebar-toc a { color: #64748b; text-decoration: none; font-size: 0.85rem; line-height: 1.4; display: block; padding: 0.25rem 0; transition: color 0.2s; }
+        .sidebar-toc a:hover { color: #2563eb; }
+        .sidebar-cta { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 12px; padding: 1.5rem; color: white; text-align: center; margin-bottom: 1.5rem; }
+        .sidebar-cta h4 { color: white; margin: 0 0 0.5rem; font-size: 1rem; }
+        .sidebar-cta p { color: rgba(255,255,255,0.9); font-size: 0.85rem; margin: 0 0 1rem; }
+        .sidebar-cta .cta-btn { background: white; color: #2563eb; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .sidebar-related { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-related h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-related a { display: block; color: #475569; text-decoration: none; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; transition: color 0.2s; }
+        .sidebar-related a:last-child { border-bottom: none; }
+        .sidebar-related a:hover { color: #2563eb; }
+        @media (max-width: 768px) { .blog-hero h1 { font-size: 1.75rem; } .blog-article { padding: 1.5rem; } .blog-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; } .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { display: none; } }
     </style>
 </head>
 <body>
@@ -194,6 +212,7 @@
     <!-- Blog Content -->
     <section class="blog-content">
         <div class="container">
+            <div class="blog-layout">
             <article class="blog-article">
                 <p>Every job application deserves a tailored resume. But who has time to customize their resume for 50+ applications? In this guide, you'll learn how to <strong>tailor your resume to any job description in one click</strong> using AI tools.</p>
 
@@ -201,7 +220,7 @@
                     <p><strong>Research shows:</strong> Tailored resumes receive 3x more interview callbacks than generic ones. Recruiters spend only 7 seconds scanning each resume—make every word count.</p>
                 </div>
 
-                <h2>Why You Must Tailor Your Resume to Each Job</h2>
+                <h2 id="why-tailor">Why You Must Tailor Your Resume to Each Job</h2>
                 <p>Sending the same resume to every job is the #1 mistake job seekers make. Here's why tailoring matters:</p>
 
                 <ul>
@@ -211,7 +230,7 @@
                     <li><strong>Competition:</strong> Stand out from candidates using generic resumes</li>
                 </ul>
 
-                <h2>The Traditional Way: Manual Resume Tailoring</h2>
+                <h2 id="manual">The Traditional Way: Manual Resume Tailoring</h2>
                 <p>The old-school approach to tailoring resumes involves these steps:</p>
 
                 <ol class="steps-list">
@@ -227,7 +246,7 @@
                 <p><strong>Time required:</strong> 30-60 minutes per application</p>
                 <p><strong>Problem:</strong> Unsustainable when applying to multiple jobs</p>
 
-                <h2>The Modern Way: One-Click Resume Tailoring</h2>
+                <h2 id="modern">The Modern Way: One-Click Resume Tailoring</h2>
                 <p>AI-powered tools can now tailor your resume to any job description in seconds. Here's how the best tools work:</p>
 
                 <h3>How KUPOSU AI Tailors Resumes Instantly</h3>
@@ -249,7 +268,7 @@
                     </a>
                 </div>
 
-                <h2>What Gets Tailored Automatically</h2>
+                <h2 id="what-tailored">What Gets Tailored Automatically</h2>
                 <p>When you use KUPOSU AI to tailor your resume, the AI adjusts:</p>
 
                 <ul>
@@ -260,7 +279,7 @@
                     <li><strong>Job Title:</strong> Adjusted to mirror the position (when appropriate)</li>
                 </ul>
 
-                <h2>Manual Tailoring Tips (When You Have Time)</h2>
+                <h2 id="tips">Manual Tailoring Tips (When You Have Time)</h2>
                 <p>If you prefer manual control, here are expert tips:</p>
 
                 <h3>1. Mirror the Job Title</h3>
@@ -282,7 +301,7 @@
                     <p><strong>Pro Tip:</strong> Keep a "master resume" with ALL your experience. Then create tailored versions by removing irrelevant items rather than adding new ones.</p>
                 </div>
 
-                <h2>Comparison: Manual vs AI Tailoring</h2>
+                <h2 id="comparison">Comparison: Manual vs AI Tailoring</h2>
                 <table class="comparison-table">
                     <tr>
                         <th>Factor</th>
@@ -316,7 +335,7 @@
                     </tr>
                 </table>
 
-                <h2>Common Mistakes When Tailoring Resumes</h2>
+                <h2 id="mistakes">Common Mistakes When Tailoring Resumes</h2>
                 <ul>
                     <li><strong>Keyword Stuffing:</strong> Adding too many keywords unnaturally</li>
                     <li><strong>Lying:</strong> Never add skills you don't have</li>
@@ -325,7 +344,7 @@
                     <li><strong>One-Size-Fits-All:</strong> Using the same resume for different job types</li>
                 </ul>
 
-                <h2>When to Tailor vs When to Use Generic Resume</h2>
+                <h2 id="when-to-tailor">When to Tailor vs When to Use Generic Resume</h2>
                 <p><strong>Always tailor for:</strong></p>
                 <ul>
                     <li>Dream jobs you really want</li>
@@ -356,6 +375,37 @@
                     </div>
                 </div>
             </article>
+            <aside class="blog-sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-toc">
+                        <h4>Table of Contents</h4>
+                        <ul>
+                            <li><a href="#why-tailor">Why You Must Tailor Your Resume</a></li>
+                            <li><a href="#manual">Manual Resume Tailoring</a></li>
+                            <li><a href="#modern">One-Click Resume Tailoring</a></li>
+                            <li><a href="#what-tailored">What Gets Tailored Automatically</a></li>
+                            <li><a href="#tips">Manual Tailoring Tips</a></li>
+                            <li><a href="#comparison">Manual vs AI Tailoring</a></li>
+                            <li><a href="#mistakes">Common Mistakes</a></li>
+                            <li><a href="#when-to-tailor">When to Tailor vs Generic</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-cta">
+                        <h4>Tailor Resumes Instantly</h4>
+                        <p>One click. Any job. ATS-optimized.</p>
+                        <a href="https://chromewebstore.google.com/detail/kuposu-ai-resume-maker/eofpmapkmfcmmbeppodpgeelpefjpeeb" target="_blank" class="cta-btn">
+                            <i class="fab fa-chrome"></i> Install Free
+                        </a>
+                    </div>
+                    <div class="sidebar-related">
+                        <h4>Related Articles</h4>
+                        <a href="job-specific-resume-generator.html">Job Specific Resume Generator</a>
+                        <a href="checker.html">Best ATS Resume Checker 2026</a>
+                        <a href="linkedin-jobs-resume-customizer.html">LinkedIn Jobs Resume Customizer</a>
+                    </div>
+                </div>
+            </aside>
+            </div>
         </div>
     </section>
 

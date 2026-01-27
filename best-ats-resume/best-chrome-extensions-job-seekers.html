@@ -134,7 +134,7 @@
         .blog-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 0.95rem; opacity: 0.9; }
         .blog-meta span { display: flex; align-items: center; gap: 0.5rem; }
         .blog-content { padding: 4rem 0; background: #f8fafc; }
-        .blog-content .container { max-width: 800px; }
+        .blog-content .container { max-width: 1100px; }
         .blog-article { background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
         .blog-article h2 { font-size: 1.75rem; color: #1e293b; margin: 2.5rem 0 1rem; padding-top: 1rem; }
         .blog-article h3 { font-size: 1.35rem; color: #334155; margin: 2rem 0 0.75rem; }
@@ -160,7 +160,25 @@
         .related-card:hover { border-color: #2563eb; transform: translateY(-2px); }
         .related-card h4 { color: #1e293b; margin: 0 0 0.5rem; font-size: 1rem; }
         .related-card p { color: #64748b; margin: 0; font-size: 0.9rem; }
-        @media (max-width: 768px) { .blog-hero h1 { font-size: 1.75rem; } .blog-article { padding: 1.5rem; } .blog-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; } }
+        .blog-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; align-items: start; }
+        .blog-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 5rem; }
+        .sidebar-toc { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-toc h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-toc ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar-toc li { margin-bottom: 0.5rem; }
+        .sidebar-toc a { color: #64748b; text-decoration: none; font-size: 0.85rem; line-height: 1.4; display: block; padding: 0.25rem 0; transition: color 0.2s; }
+        .sidebar-toc a:hover { color: #2563eb; }
+        .sidebar-cta { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 12px; padding: 1.5rem; color: white; text-align: center; margin-bottom: 1.5rem; }
+        .sidebar-cta h4 { color: white; margin: 0 0 0.5rem; font-size: 1rem; }
+        .sidebar-cta p { color: rgba(255,255,255,0.9); font-size: 0.85rem; margin: 0 0 1rem; }
+        .sidebar-cta .cta-btn { background: white; color: #2563eb; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .sidebar-related { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-related h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-related a { display: block; color: #475569; text-decoration: none; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; transition: color 0.2s; }
+        .sidebar-related a:last-child { border-bottom: none; }
+        .sidebar-related a:hover { color: #2563eb; }
+        @media (max-width: 768px) { .blog-hero h1 { font-size: 1.75rem; } .blog-article { padding: 1.5rem; } .blog-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; } .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { display: none; } }
     </style>
 </head>
 <body>
@@ -198,6 +216,7 @@
     <!-- Blog Content -->
     <section class="blog-content">
         <div class="container">
+            <div class="blog-layout">
             <article class="blog-article">
                 <p>Your job search can be 10x more efficient with the right tools. We've tested dozens of <strong>Chrome extensions for job seekers</strong> and compiled the definitive list for 2026. These extensions will help you create better resumes, track applications, and land more interviews.</p>
 
@@ -205,7 +224,7 @@
                     <p><strong>Time Saved:</strong> Using the right Chrome extensions can save you 10+ hours per week on job applications while improving your success rate.</p>
                 </div>
 
-                <h2>Top 10 Chrome Extensions for Job Seekers in 2026</h2>
+                <h2 id="top-10">Top 10 Chrome Extensions for Job Seekers in 2026</h2>
 
                 <div class="extension-card">
                     <h3><span class="rank">1</span> KUPOSU AI - AI Resume Builder & ATS Optimizer</h3>
@@ -336,7 +355,7 @@
                     </a>
                 </div>
 
-                <h2>How to Use These Extensions Together</h2>
+                <h2 id="workflow">How to Use These Extensions Together</h2>
                 <p>For maximum efficiency, we recommend this workflow:</p>
                 <ol>
                     <li><strong>Research:</strong> Use Glassdoor to check company reviews and salary ranges</li>
@@ -348,7 +367,7 @@
                     <li><strong>Follow Up:</strong> Use Grammarly for professional emails</li>
                 </ol>
 
-                <h2>Free vs Paid: Which Extensions Are Worth Paying For?</h2>
+                <h2 id="free-vs-paid">Free vs Paid: Which Extensions Are Worth Paying For?</h2>
                 <p><strong>Worth the investment:</strong></p>
                 <ul>
                     <li>KUPOSU AI Premium - Unlimited tailored resumes saves hours</li>
@@ -376,6 +395,32 @@
                     </div>
                 </div>
             </article>
+            <aside class="blog-sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-toc">
+                        <h4>Table of Contents</h4>
+                        <ul>
+                            <li><a href="#top-10">Top 10 Extensions for 2026</a></li>
+                            <li><a href="#workflow">How to Use Together</a></li>
+                            <li><a href="#free-vs-paid">Free vs Paid</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-cta">
+                        <h4>Tailor Resumes Instantly</h4>
+                        <p>One click. Any job. ATS-optimized.</p>
+                        <a href="https://chromewebstore.google.com/detail/kuposu-ai-resume-maker/eofpmapkmfcmmbeppodpgeelpefjpeeb" target="_blank" class="cta-btn">
+                            <i class="fab fa-chrome"></i> Install Free
+                        </a>
+                    </div>
+                    <div class="sidebar-related">
+                        <h4>Related Articles</h4>
+                        <a href="free-ats-resume-checker-chrome-extension.html">Free ATS Checker Extensions</a>
+                        <a href="ats-extension.html">How to Use KUPOSU AI</a>
+                        <a href="tailor-resume-to-job-description.html">Tailor Resume to Job Description</a>
+                    </div>
+                </div>
+            </aside>
+            </div>
         </div>
     </section>
 

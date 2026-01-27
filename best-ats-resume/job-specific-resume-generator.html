@@ -181,7 +181,7 @@
         }
 
         .blog-content .container {
-            max-width: 800px;
+            max-width: 1100px;
         }
 
         .blog-article {
@@ -418,6 +418,25 @@
             font-size: 0.9rem;
         }
 
+        .blog-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; align-items: start; }
+        .blog-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 5rem; }
+        .sidebar-toc { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-toc h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-toc ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar-toc li { margin-bottom: 0.5rem; }
+        .sidebar-toc a { color: #64748b; text-decoration: none; font-size: 0.85rem; line-height: 1.4; display: block; padding: 0.25rem 0; transition: color 0.2s; }
+        .sidebar-toc a:hover { color: #2563eb; }
+        .sidebar-cta { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 12px; padding: 1.5rem; color: white; text-align: center; margin-bottom: 1.5rem; }
+        .sidebar-cta h4 { color: white; margin: 0 0 0.5rem; font-size: 1rem; }
+        .sidebar-cta p { color: rgba(255,255,255,0.9); font-size: 0.85rem; margin: 0 0 1rem; }
+        .sidebar-cta .cta-btn { background: white; color: #2563eb; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .sidebar-related { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .sidebar-related h4 { font-size: 0.95rem; color: #1e293b; margin: 0 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .sidebar-related a { display: block; color: #475569; text-decoration: none; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; transition: color 0.2s; }
+        .sidebar-related a:last-child { border-bottom: none; }
+        .sidebar-related a:hover { color: #2563eb; }
+
         @media (max-width: 768px) {
             .blog-hero h1 {
                 font-size: 1.75rem;
@@ -432,6 +451,9 @@
                 align-items: flex-start;
                 gap: 0.5rem;
             }
+
+            .blog-layout { grid-template-columns: 1fr; }
+            .blog-sidebar { display: none; }
         }
     </style>
 </head>
@@ -470,6 +492,7 @@
     <!-- Blog Content -->
     <section class="blog-content">
         <div class="container">
+            <div class="blog-layout">
             <article class="blog-article">
                 <p>Sending the same generic resume to every job application? That's why you're not getting callbacks. In today's competitive job market, a <strong>job specific resume generator</strong> is no longer a luxury—it's a necessity.</p>
 
@@ -477,7 +500,7 @@
                     <p><strong>Did you know?</strong> 75% of resumes are rejected by ATS (Applicant Tracking Systems) before a human ever sees them. The #1 reason? Resumes don't match the job description.</p>
                 </div>
 
-                <h2>What is a Job Specific Resume Generator?</h2>
+                <h2 id="what-is">What is a Job Specific Resume Generator?</h2>
                 <p>A <strong>job specific resume generator</strong> is a tool that automatically customizes your resume to match a specific job description. Instead of manually editing your resume for each application, these tools:</p>
                 <ul>
                     <li>Analyze the job posting for key skills and keywords</li>
@@ -487,7 +510,7 @@
                     <li>Generate a tailored resume in seconds</li>
                 </ul>
 
-                <h2>Why You Need a Job-Specific Resume</h2>
+                <h2 id="why-need">Why You Need a Job-Specific Resume</h2>
                 <p>Here's the harsh truth: recruiters spend an average of <strong>7 seconds</strong> scanning your resume. If they don't immediately see relevant keywords and matching experience, your resume goes in the "no" pile.</p>
 
                 <h3>The ATS Problem</h3>
@@ -503,7 +526,7 @@
                     <p><strong>Pro Tip:</strong> A job-specific resume can increase your interview callback rate by 3x compared to a generic resume.</p>
                 </div>
 
-                <h2>3 Methods to Generate Job-Specific Resumes</h2>
+                <h2 id="methods">3 Methods to Generate Job-Specific Resumes</h2>
 
                 <h3>Method 1: Manual Customization (Time-Consuming)</h3>
                 <p>The traditional approach involves:</p>
@@ -560,7 +583,7 @@
                     </a>
                 </div>
 
-                <h2>How KUPOSU AI Generates Job-Specific Resumes</h2>
+                <h2 id="how-kuposu">How KUPOSU AI Generates Job-Specific Resumes</h2>
                 <p>KUPOSU AI is designed to be the easiest job specific resume generator available. Here's how it works:</p>
 
                 <ol>
@@ -580,7 +603,7 @@
                     <li>Formats everything for ATS compatibility</li>
                 </ul>
 
-                <h2>5 Tips for Better Job-Specific Resumes</h2>
+                <h2 id="tips">5 Tips for Better Job-Specific Resumes</h2>
 
                 <h3>1. Mirror the Job Title</h3>
                 <p>If the job posting says "Software Developer," use that exact title—not "Software Engineer" or "Programmer."</p>
@@ -597,7 +620,7 @@
                 <h3>5. Include Industry Terms</h3>
                 <p>Use the same terminology as the job posting. If they say "agile methodology," don't write "scrum" unless both are mentioned.</p>
 
-                <h2>Frequently Asked Questions</h2>
+                <h2 id="faq">Frequently Asked Questions</h2>
                 <div class="faq-section">
                     <div class="faq-item">
                         <h3><i class="fas fa-question-circle"></i> What is a job specific resume generator?</h3>
@@ -636,6 +659,33 @@
                     </div>
                 </div>
             </article>
+            <aside class="blog-sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-toc">
+                        <h4>Table of Contents</h4>
+                        <ul>
+                            <li><a href="#what-is">What is a Job Specific Resume Generator?</a></li>
+                            <li><a href="#why-need">Why You Need a Job-Specific Resume</a></li>
+                            <li><a href="#methods">3 Methods to Generate Job-Specific Resumes</a></li>
+                            <li><a href="#how-kuposu">How KUPOSU AI Generates Job-Specific Resumes</a></li>
+                            <li><a href="#tips">5 Tips for Better Job-Specific Resumes</a></li>
+                            <li><a href="#faq">Frequently Asked Questions</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-cta">
+                        <h4>Install KUPOSU AI</h4>
+                        <p>Generate tailored resumes for any job in seconds.</p>
+                        <a href="https://chromewebstore.google.com/detail/kuposu-ai-resume-maker/eofpmapkmfcmmbeppodpgeelpefjpeeb" target="_blank" class="cta-btn"><i class="fab fa-chrome"></i> Add to Chrome</a>
+                    </div>
+                    <div class="sidebar-related">
+                        <h4>Related Articles</h4>
+                        <a href="checker.html">Best ATS Resume Checker 2026</a>
+                        <a href="ats-extension.html">How to Use KUPOSU AI Extension</a>
+                        <a href="tailor-resume-to-job-description.html">Tailor Resume to Job Description</a>
+                    </div>
+                </div>
+            </aside>
+            </div>
         </div>
     </section>
 
